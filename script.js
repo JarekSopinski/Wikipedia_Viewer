@@ -33,7 +33,12 @@ const fetchDataFromWikipedia = () => {
 const renderSearchResults = (data) => {
 
     const pages = data.query.pages;
-    $searchResultsList.append(addArticlesToList(pages))
+
+    const pagesSorted = pages.sort((prev, next) => {
+        return prev.index - next.index
+    });
+
+    $searchResultsList.append(addArticlesToList(pagesSorted))
 
 };
 
