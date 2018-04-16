@@ -5,7 +5,7 @@ const $searchResultsList = $("#searchResultsList");
 
 const ARTICLE_URL = "https://en.wikipedia.org/?curid=";
 const API_URL = "https://en.wikipedia.org/w/api.php?";
-const API_SETTINGS = `format=json&formatversion=2&action=query&generator=search&gsrnamespace=0&prop=pageimages|extracts|description&pithumbsize=300&pilimit=max&exintro&explaintext&exsentences=1&exlimit=max`;
+const API_SETTINGS = `format=json&formatversion=2&action=query&generator=search&gsrnamespace=0&prop=pageimages|extracts|description|categories&pithumbsize=300&pilimit=max&exintro&explaintext&exsentences=1&exlimit=max`;
 const ERROR_MSG = "An error occurred. Please check your internet connection and try again.";
 
 const performSearch = () => {
@@ -38,6 +38,8 @@ const renderSearchResults = (data) => {
         return prev.index - next.index
     });
 
+    console.log(pagesSorted);
+
     $searchResultsList.append(addArticlesToList(pagesSorted))
 
 };
@@ -51,13 +53,19 @@ const addArticlesToList = (pages) => {
         const description = page.description;
         const extract = page.extract;
 
-        return $(`<li>
+        const disambiguationDescription = "Disambiguation page providing links to articles with similar titles";
+
+        if (description !== disambiguationDescription) {
+
+            return $(`<li>
                     <a href=${ARTICLE_URL + pageId} target="_blank">
                         <h2>${title}</h2>
                     </a>
                     <p>${description}</p>
                     <p>${extract}</p>
                   </li>`)
+
+        }
 
     })
 
