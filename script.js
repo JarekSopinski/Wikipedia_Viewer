@@ -3,9 +3,6 @@ const $searchSelect = $("#searchSelect");
 const $searchBtn = $("#searchBtn");
 const $searchResultsList = $("#searchResultsList");
 
-let searchTerm = "";
-let searchLimit = "10";
-
 const ARTICLE_URL = "https://en.wikipedia.org/?curid=";
 const API_URL = "https://en.wikipedia.org/w/api.php?";
 const API_SETTINGS = `format=json&formatversion=2&action=query&generator=search&gsrnamespace=0&prop=pageimages|extracts|description&pithumbsize=300&pilimit=max&exintro&explaintext&exsentences=1&exlimit=max`;
@@ -21,8 +18,8 @@ const performSearch = () => {
 
 const fetchDataFromWikipedia = () => {
 
-    searchLimit = $searchSelect.val();
-    searchTerm = handleInputWhitespaces($searchInput.val());
+    const searchLimit = $searchSelect.val();
+    const searchTerm = handleInputWhitespaces($searchInput.val());
 
     console.log(`${API_URL}${API_SETTINGS}&gsrlimit=${searchLimit}&gsrsearch=${searchTerm}`);
 
@@ -44,11 +41,18 @@ const addArticlesToList = (pages) => {
 
     return pages.map(page => {
 
+        const pageId = page.pageid;
         const title = page.title;
         const description = page.description;
         const extract = page.extract;
 
-        return $(`<li><h2>${title}</h2><p>${description}</p><p>${extract}</p></li>`)
+        return $(`<li>
+                    <a href=${ARTICLE_URL + pageId} target="_blank">
+                        <h2>${title}</h2>
+                    </a>
+                    <p>${description}</p>
+                    <p>${extract}</p>
+                  </li>`)
 
     })
 
