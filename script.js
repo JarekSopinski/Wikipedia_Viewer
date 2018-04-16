@@ -40,6 +40,7 @@ const renderSearchResults = (data) => {
 
     console.log(pagesSorted);
 
+    $searchResultsList.empty();
     $searchResultsList.append(addArticlesToList(pagesSorted))
 
 };
