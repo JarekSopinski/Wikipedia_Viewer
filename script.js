@@ -1,5 +1,3 @@
-//TODO: style search, style footer
-
 const $performSearchIcon = $("#performSearchIcon");
 const $searchFormContainer = $("#searchFormContainer");
 const $searchInput = $("#searchInput");
@@ -31,11 +29,8 @@ const performSearch = (searchStatus) => {
 
 const fetchDataFromWikipedia = () => {
 
-    console.log(searchSelectState);
     const searchLimit = searchSelectState.toString();
     const searchTerm = handleInputWhitespaces($searchInput.val());
-
-    console.log(`${API_URL}${API_SETTINGS}&gsrlimit=${searchLimit}&gsrsearch=${searchTerm}`);
 
     return $.ajax({
         dataType: "jsonp", // jsonp is needed to prevent CORS problems
@@ -51,8 +46,6 @@ const renderSearchResults = (data) => {
     const pagesSorted = pages.sort((prev, next) => {
         return prev.index - next.index
     });
-
-    console.log(pagesSorted);
 
     $searchResultsList.empty();
     $searchResultsList.append(addPagesToList(pagesSorted));
@@ -87,9 +80,14 @@ const addPagesToList = (pages) => {
                         </a>
                         <p class="page-box-content-description">${description}</p>
                         <p class="page-box-content-extract">${extract || ""}</p>
-                        <a href=${ARTICLE_URL + pageid} target="_blank">
-                             <button>Read full article on Wikipedia</button>
-                        </a>
+
+                             <div class="page-box-content-btn">
+                                <a href=${ARTICLE_URL + pageid} target="_blank">
+                                <img src="img/wikipedia-logo-small.png">
+                                <span>Read on Wikipedia...</span>
+                                </a>
+                            </div>
+                        
                     </div>
                   </li>`)
 

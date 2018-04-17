@@ -4,6 +4,7 @@ BRIGHT YELLOW (CRAYOLA): #FF9F1C
 DARK BLUE (GUNMETAL): #2B2D42
 GRAY BLUE: #8D99AE
 ANTI-FLASH WHITE: #EDF2F4
+RED (ROSE MADDER): #E71D36
  */
 
 @import url('https://fonts.googleapis.com/css?family=Marcellus+SC|Open+Sans');
@@ -132,6 +133,24 @@ h2 {
     margin-bottom: 5px;
     font-size: 13px;
     text-align: justify;
+}
+
+.page-box-content-btn {
+    padding: 5px;
+    width: 60%;
+    background-color: #2B2D42;
+    border: 2px solid #EDF2F4;
+    transition: width, 2s;
+}
+
+.page-box-content-btn img {
+    display: inline;
+    height: 15px;
+}
+
+.page-box-content-btn span {
+    font-size: 15px;
+    color: #EDF2F4;
 }
 
 .page-box-content:hover {
