@@ -1,3 +1,11 @@
+/*
+COLORS:
+BRIGHT YELLOW (CRAYOLA): #FF9F1C
+DARK BLUE (GUNMETAL): #2B2D42
+GRAY BLUE: #8D99AE
+ANTI-FLASH WHITE: #EDF2F4
+ */
+
 @import url('https://fonts.googleapis.com/css?family=Marcellus+SC|Open+Sans');
 
 body {
@@ -43,6 +51,7 @@ h2 {
     border: 5px solid #EDF2F4;
     box-sizing: border-box;
     background-color: #8D99AE;
+    transition: background-color, 1s
 }
 
 .page-box-content img {
@@ -52,17 +61,21 @@ h2 {
     max-height: 200px;
 }
 
-.description {
+.page-box-content-description {
     margin: 10px 0 10px 0;
     font-size: 15px;
     font-style: italic;
     text-align: justify;
 }
 
-.extract {
+.page-box-content-extract {
     margin-bottom: 5px;
     font-size: 13px;
     text-align: justify;
+}
+
+.page-box-content:hover {
+    background-color: #FF9F1C;
 }
 
 @media screen and (min-width: 576px) {
@@ -73,7 +86,7 @@ h2 {
 
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 992px) {
 
     .page-box {
         width: 33%;
