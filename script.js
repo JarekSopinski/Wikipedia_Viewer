@@ -1,4 +1,4 @@
-//TODO: load more?, style search, style footer, empty input error
+//TODO: load more?, style search, style footer, empty input error, return initial state on new search
 
 const $searchInput = $("#searchInput");
 const $searchSelect = $("#searchSelect");
@@ -49,7 +49,8 @@ const renderSearchResults = (data) => {
     console.log(pagesSorted);
 
     $searchResultsList.empty();
-    $searchResultsList.append(addPagesToList(pagesSorted))
+    $searchResultsList.append(addPagesToList(pagesSorted));
+    $loadMoreBtn.removeClass("hiddenItem");
 
 };
 

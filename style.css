@@ -32,6 +32,10 @@ h2 {
     text-align: center;
 }
 
+.hiddenItem {
+    display: none !important;
+}
+
 #searchResultsList {
     display: flex;
     flex-flow: wrap;
