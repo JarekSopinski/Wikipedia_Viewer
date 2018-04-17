@@ -1,4 +1,4 @@
-//TODO: Don't display description if undefinied; render images (or placeholders), grid styling, shorten extract if too long for box, "no desc", "no extr" if none are provided, load more?
+//TODO: load more?, color transition on hover, style search, style footer
 
 const $searchInput = $("#searchInput");
 const $searchSelect = $("#searchSelect");
@@ -7,7 +7,7 @@ const $searchResultsList = $("#searchResultsList");
 
 const ARTICLE_URL = "https://en.wikipedia.org/?curid=";
 const API_URL = "https://en.wikipedia.org/w/api.php?";
-const API_SETTINGS = `format=json&formatversion=2&action=query&generator=search&gsrnamespace=0&prop=pageimages|extracts|description|categories&pithumbsize=300&pilimit=max&exintro&explaintext&exsentences=1&exlimit=max`;
+const API_SETTINGS = `format=json&formatversion=2&action=query&generator=search&gsrnamespace=0&prop=pageimages|extracts|description&pithumbsize=300&pilimit=max&exintro&explaintext&exlimit=max&exchars=200`;
 const ERROR_MSG = "An error occurred. Please check your internet connection and try again.";
 
 const performSearch = () => {
@@ -51,7 +51,10 @@ const addPagesToList = (pages) => {
 
     return pages.map(page => {
 
-        const { pageid, title, description, extract } = page;
+        const { pageid, title, extract } = page;
+
+        let description = page.description || "No description provided";
+        description = description.charAt(0).toUpperCase() + description.slice(1);
 
         let thumbnailSource;
         page.thumbnail ?
