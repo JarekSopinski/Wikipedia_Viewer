@@ -1,3 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+h2, p {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h2 {
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+}
+
+p:first-of-type {
+    margin: 10px 0 5px 0;
+    font-size: 15px;
+    font-style: italic;
+    text-align: justify;
+}
+
+p:last-of-type {
+    font-size: 13px;
+    text-align: justify;
+}
+
 #searchResultsList {
     display: flex;
     flex-flow: wrap;
@@ -19,6 +45,8 @@
 }
 
 .page-box-content img {
+    display: block;
+    margin: auto;
     max-width: 200px;
     max-height: 200px;
 }
