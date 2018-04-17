@@ -1,3 +1,5 @@
+//TODO: Don't display description if undefinied; render images (or placeholders), grid styling, shorten extract if too long for box, "no desc", "no extr" if none are provided, load more?
+
 const $searchInput = $("#searchInput");
 const $searchSelect = $("#searchSelect");
 const $searchBtn = $("#searchBtn");
@@ -49,18 +51,22 @@ const addArticlesToList = (pages) => {
 
     return pages.map(page => {
 
-        const pageId = page.pageid;
-        const title = page.title;
-        const description = page.description;
-        const extract = page.extract;
+        const { pageid, title, description, extract } = page;
+
+        let thumbnailSource;
+        page.thumbnail ?
+            thumbnailSource = page.thumbnail.source
+            :
+            thumbnailSource = "img/wikipedia_placeholder_480.png";
 
         const disambiguationDescription = "Disambiguation page providing links to articles with similar titles";
-
+        
         if (description !== disambiguationDescription) {
 
             return $(`<li>
-                    <a href=${ARTICLE_URL + pageId} target="_blank">
+                    <a href=${ARTICLE_URL + pageid} target="_blank">
                         <h2>${title}</h2>
+                        <img src=${thumbnailSource}>
                     </a>
                     <p>${description}</p>
                     <p>${extract}</p>
