@@ -1,16 +1,21 @@
-//TODO: load more?, style search, style footer
+//TODO: load more?, style search, style footer, empty input error
 
 const $searchInput = $("#searchInput");
 const $searchSelect = $("#searchSelect");
 const $searchBtn = $("#searchBtn");
 const $searchResultsList = $("#searchResultsList");
+const $loadMoreBtn = $("#loadMoreBtn");
 
 const ARTICLE_URL = "https://en.wikipedia.org/?curid=";
 const API_URL = "https://en.wikipedia.org/w/api.php?";
 const API_SETTINGS = `format=json&formatversion=2&action=query&generator=search&gsrnamespace=0&prop=pageimages|extracts|description&pithumbsize=300&pilimit=max&exintro&explaintext&exlimit=max&exchars=200`;
 const ERROR_MSG = "An error occurred. Please check your internet connection and try again.";
 
-const performSearch = () => {
+let searchSelectState = 10;
+
+const performSearch = (searchStatus) => {
+
+    if (searchStatus === "additionalSearch") {searchSelectState += 10}
 
     fetchDataFromWikipedia()
         .then(data => renderSearchResults(data))
@@ -20,7 +25,8 @@ const performSearch = () => {
 
 const fetchDataFromWikipedia = () => {
 
-    const searchLimit = $searchSelect.val();
+    console.log(searchSelectState);
+    const searchLimit = searchSelectState;
     const searchTerm = handleInputWhitespaces($searchInput.val());
 
     console.log(`${API_URL}${API_SETTINGS}&gsrlimit=${searchLimit}&gsrsearch=${searchTerm}`);
@@ -94,4 +100,10 @@ const handleInputWhitespaces = (inputValue) => {
     return inputValue.replace(/ /g, "+")
 };
 
-$searchBtn.on("click", performSearch);
+const setSearchSelectState = () => {
+    searchSelectState = $searchSelect.val()
+};
+
+$searchBtn.on("click", () => performSearch("normalSearch"));
+$searchSelect.on("change", setSearchSelectState);
+$loadMoreBtn.on("click", () => performSearch("additionalSearch"));
