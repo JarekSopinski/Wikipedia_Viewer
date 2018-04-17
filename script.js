@@ -84,7 +84,7 @@ const addPagesToList = (pages) => {
                              <div class="page-box-content-btn">
                                 <a href=${ARTICLE_URL + pageid} target="_blank">
                                 <img src="img/wikipedia-logo-small.png">
-                                <span>Read on Wikipedia...</span>
+                                <span>Read on Wikipedia</span>
                                 </a>
                             </div>
                         

@@ -107,7 +107,8 @@ h2 {
 }
 
 .page-box-content {
-    height: 100%;
+    position: relative;
+    min-height: 500px;
     padding: 20px;
     border: 5px solid #EDF2F4;
     box-sizing: border-box;
@@ -136,11 +137,13 @@ h2 {
 }
 
 .page-box-content-btn {
+    position: absolute;
+    bottom: 0;
+    margin: 10px 20px 20px 0;
     padding: 5px;
-    width: 60%;
+    width: 80%;
     background-color: #2B2D42;
     border: 2px solid #EDF2F4;
-    transition: width, 2s;
 }
 
 .page-box-content-btn img {
@@ -239,6 +242,15 @@ footer span:last-of-type {
 
     .page-box {
         width: 25%;
+    }
+
+    .page-box-content {
+        min-height: 550px;
+    }
+
+    .page-box-content-btn {
+        width: 60%;
+        right: 0;
     }
 
 }
