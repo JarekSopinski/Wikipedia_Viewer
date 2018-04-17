@@ -78,9 +78,37 @@ h2 {
     background-color: #FF9F1C;
 }
 
+#loadMoreBtn {
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding: 10px;
+    width: 80%;
+    background-color: #8D99AE;
+    border: 2px solid #EDF2F4;
+    transition: background-color, 1s
+}
+
+#loadMoreBtn:hover {
+    background-color: #FF9F1C;
+}
+
+#loadMoreBtn p {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
 @media screen and (min-width: 576px) {
 
     .page-box {
+        width: 50%;
+    }
+
+    #loadMoreBtn {
         width: 50%;
     }
 
@@ -90,6 +118,10 @@ h2 {
 
     .page-box {
         width: 33%;
+    }
+
+    #loadMoreBtn {
+        width: 30%;
     }
 
 
