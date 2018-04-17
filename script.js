@@ -1,4 +1,4 @@
-//TODO: style search, style footer, empty input error
+//TODO: style search, style footer
 
 const $searchInput = $("#searchInput");
 const $searchSelect = $("#searchSelect");
@@ -71,7 +71,7 @@ const addPagesToList = (pages) => {
         page.thumbnail ?
             thumbnailSource = page.thumbnail.source
             :
-            thumbnailSource = "img/wikipedia_placeholder_480.png";
+            thumbnailSource = "img/wikipedia_placeholder_500_notext.png";
 
         const disambiguationDescription = "Disambiguation page providing links to articles with similar titles";
 
@@ -85,7 +85,7 @@ const addPagesToList = (pages) => {
                         </a>
                         <p class="page-box-content-description">${description}</p>
                         <p class="page-box-content-extract">${extract || ""}</p>
-                        <a href=${ARTICLE_URL + pageid}>
+                        <a href=${ARTICLE_URL + pageid} target="_blank">
                              <button>Read full article on Wikipedia</button>
                         </a>
                     </div>
