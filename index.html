@@ -10,30 +10,51 @@
 <body>
 
 <header>
-
+    <h1>Wikipedia Viewer</h1>
 </header>
 
 <main>
 
-    <a href="https://en.wikipedia.org/wiki/Special:Random"
-       target="_blank">
-        <button>Random article</button>
-    </a>
-    <br>
+    <div id="mainOptions">
 
-    <input id="searchInput" placeholder="What would you like to find?">
+        <div id="randomPageIcon">
 
-    <select id="searchSelect" title="maxNumberOfResults">
-        <option value="11">10</option>
-        <option value="21">20</option>
-        <option value="31">30</option>
-        <option value="41">40</option>
-        <option value="51">50</option>
-    </select>
+            <a href="https://en.wikipedia.org/wiki/Special:Random"
+               target="_blank">
+                <img src="img/random.svg" alt="random page icon">
+                <p>Click for a random page</p>
+            </a>
 
-    <!--All select values are increased by 1 because of removing disambiguation page from rendering-->
+        </div>
 
-    <button id="searchBtn">Search</button>
+        <div id="performSearchIcon">
+
+            <img src="img/search.svg" alt="search icon">
+            <p>Click to perform search</p>
+
+        </div>
+
+
+
+    </div>
+
+    <div id="searchFormContainer">
+
+        <input id="searchInput" placeholder="What would you like to find?">
+
+        <select id="searchSelect" title="maxNumberOfResults">
+            <option value="11">10</option>
+            <option value="21">20</option>
+            <option value="31">30</option>
+            <option value="41">40</option>
+            <option value="51">50</option>
+        </select>
+
+        <!--All select values are increased by 1 because of removing disambiguation page from rendering-->
+
+        <button id="searchBtn">Search</button>
+
+    </div>
 
     <ul id="searchResultsList"></ul>
 
