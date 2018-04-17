@@ -14,8 +14,11 @@ const ERROR_MSG = "An error occurred. Please check your internet connection and 
 let searchSelectState = 10;
 
 const performSearch = (searchStatus) => {
-
-    if (searchStatus === "additionalSearch") {searchSelectState += 10}
+    
+    searchStatus === "additionalSearch" ?
+        searchSelectState += 10
+        :
+        searchSelectState = parseInt($searchSelect.val());
 
     fetchDataFromWikipedia()
         .then(data => renderSearchResults(data))
@@ -26,7 +29,7 @@ const performSearch = (searchStatus) => {
 const fetchDataFromWikipedia = () => {
 
     console.log(searchSelectState);
-    const searchLimit = searchSelectState;
+    const searchLimit = searchSelectState.toString();
     const searchTerm = handleInputWhitespaces($searchInput.val());
 
     console.log(`${API_URL}${API_SETTINGS}&gsrlimit=${searchLimit}&gsrsearch=${searchTerm}`);
@@ -102,7 +105,7 @@ const handleInputWhitespaces = (inputValue) => {
 };
 
 const setSearchSelectState = () => {
-    searchSelectState = $searchSelect.val()
+    searchSelectState = parseInt($searchSelect.val())
 };
 
 $searchBtn.on("click", () => performSearch("normalSearch"));
