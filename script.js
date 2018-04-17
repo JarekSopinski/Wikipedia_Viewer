@@ -1,10 +1,10 @@
-const $performSearchIcon = $("#performSearchIcon");
-const $searchFormContainer = $("#searchFormContainer");
-const $searchInput = $("#searchInput");
-const $searchSelect = $("#searchSelect");
-const $searchBtn = $("#searchBtn");
-const $searchResultsList = $("#searchResultsList");
-const $loadMoreBtn = $("#loadMoreBtn");
+const $performSearchIcon = $(".main-options-perform-search-icon");
+const $searchFormContainer = $(".search-form-container");
+const $searchInput = $(".search-form-container-search-input");
+const $searchSelect = $(".search-form-container-search-select");
+const $searchBtn = $(".search-form-container-search-btn");
+const $searchResultsList = $(".search-results-list");
+const $loadMoreBtn = $(".load-more-btn");
 
 const ARTICLE_URL = "https://en.wikipedia.org/?curid=";
 const API_URL = "https://en.wikipedia.org/w/api.php?";
@@ -49,7 +49,7 @@ const renderSearchResults = (data) => {
 
     $searchResultsList.empty();
     $searchResultsList.append(addPagesToList(pagesSorted));
-    $loadMoreBtn.removeClass("hiddenItem");
+    $loadMoreBtn.removeClass("hidden-item");
 
 };
 
@@ -81,12 +81,12 @@ const addPagesToList = (pages) => {
                         <p class="page-box-content-description">${description}</p>
                         <p class="page-box-content-extract">${extract || ""}</p>
 
-                             <div class="page-box-content-btn">
-                                <a href=${ARTICLE_URL + pageid} target="_blank">
-                                <img src="img/wikipedia-logo-small.png">
-                                <span>Read on Wikipedia</span>
-                                </a>
-                            </div>
+                        <div class="page-box-content-btn">
+                             <a href=${ARTICLE_URL + pageid} target="_blank">
+                                 <img src="img/wikipedia-logo-small.png">
+                                 <span>Read on Wikipedia</span>
+                             </a>
+                        </div>
                         
                     </div>
                   </li>`)
@@ -110,7 +110,7 @@ const setSearchSelectState = () => {
 };
 
 const displaySearchFormContainer = () => {
-  $searchFormContainer.removeClass("hiddenItem")
+  $searchFormContainer.removeClass("hidden-item")
 };
 
 $performSearchIcon.on("click", displaySearchFormContainer);

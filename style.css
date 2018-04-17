@@ -41,37 +41,37 @@ h2 {
     text-align: center;
 }
 
-.hiddenItem {
+.hidden-item {
     display: none !important;
 }
 
-#mainOptions {
+.main-options {
     display: flex;
     justify-content: center;
     margin: 25px 0;
 }
 
-#mainOptions img {
+.main-options img {
     display: block;
     margin: auto;
     max-width: 50px;
     margin-bottom: 10px;
 }
 
-#mainOptions p {
+.main-options p {
     text-align: center;
     color: #EDF2F4;
 }
 
-#randomPageIcon {
+.main-options-random-page-icon {
     margin-right: 25px;
 }
 
-#performSearchIcon {
+.main-options-perform-search-icon {
     cursor: pointer;
 }
 
-#searchFormContainer {
+.search-form-container {
     display: block;
     margin: auto;
     width: 80%;
@@ -81,19 +81,19 @@ h2 {
     border-radius: 20px;
 }
 
-#searchFormContainer div {
+.search-form-container div {
     text-align: center;
 }
 
-#searchFormContainer div:first-of-type {
+.search-form-container div:first-of-type {
     margin-bottom: 10px;
 }
 
-#searchFormContainer span {
+.search-form-container span {
     font-size: 15px;
 }
 
-#searchResultsList {
+.search-results-list {
     display: flex;
     flex-flow: wrap;
     justify-content: center;
@@ -160,7 +160,7 @@ h2 {
     background-color: #FF9F1C;
 }
 
-#loadMoreBtn {
+.load-more-btn {
     cursor: pointer;
     display: block;
     margin: auto;
@@ -173,11 +173,11 @@ h2 {
     transition: background-color, 1s
 }
 
-#loadMoreBtn:hover {
+.load-more-btn:hover {
     background-color: #FF9F1C;
 }
 
-#loadMoreBtn p {
+.load-more-btn p {
     text-align: center;
     font-size: 20px;
     font-weight: bold;
@@ -212,11 +212,11 @@ footer span:last-of-type {
         width: 50%;
     }
 
-    #loadMoreBtn {
+    .load-more-btn {
         width: 50%;
     }
 
-    #searchFormContainer {
+    .search-form-container {
         width: 50%;
     }
 
@@ -228,11 +228,11 @@ footer span:last-of-type {
         width: 33%;
     }
 
-    #loadMoreBtn {
+    .load-more-btn {
         width: 30%;
     }
 
-    #searchFormContainer {
+    .search-form-container {
         width: 30%;
     }
 
@@ -259,6 +259,15 @@ footer span:last-of-type {
 
     .page-box {
         width: 20%;
+    }
+
+    .page-box-content {
+        min-height: 450px;
+    }
+
+    .page-box-content-btn {
+        width: 50%;
+        right: 0;
     }
 
 }

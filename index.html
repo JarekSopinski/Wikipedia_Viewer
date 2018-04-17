@@ -15,9 +15,9 @@
 
 <main>
 
-    <div id="mainOptions">
+    <div class="main-options">
 
-        <div id="randomPageIcon">
+        <div class="main-options-random-page-icon">
 
             <a href="https://en.wikipedia.org/wiki/Special:Random"
                target="_blank">
@@ -27,7 +27,7 @@
 
         </div>
 
-        <div id="performSearchIcon">
+        <div class="main-options-perform-search-icon">
 
             <img src="img/search.svg" alt="search icon">
             <p>Click to perform search</p>
@@ -36,16 +36,18 @@
 
     </div>
 
-    <div id="searchFormContainer" class="hiddenItem">
+    <div class="search-form-container hidden-item">
 
         <div>
-            <input id="searchInput" placeholder="What would you like to find?">
-            <button id="searchBtn">Search</button>
+            <input class="search-form-container-search-input"
+                   placeholder="What would you like to find?">
+            <button class="search-form-container-search-btn">Search</button>
         </div>
 
         <div>
             <span>Number of results:&nbsp;</span>
-            <select id="searchSelect" title="maxNumberOfResults">
+            <select class="search-form-container-search-select"
+                    title="maxNumberOfResults">
                 <option value="11">10</option>
                 <option value="21">20</option>
                 <option value="31">30</option>
@@ -56,19 +58,20 @@
 
         <!--All select values are increased by 1 because of removing disambiguation page from rendering-->
 
-
     </div>
 
-    <ul id="searchResultsList"></ul>
+    <ul class="search-results-list"></ul>
 
-    <div id="loadMoreBtn" class="hiddenItem"><p>Load more pages</p></div>
+    <div class="load-more-btn hidden-item">
+        <p>Load more pages</p>
+    </div>
 
 </main>
 
 <footer>
     <p>
         <span>Coded by</span>
-        <span> Jarek Sopinski</span>
+        <span>Jarek Sopinski</span>
     </p>
 </footer>
 
