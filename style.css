@@ -1,14 +1,22 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Marcellus+SC|Open+Sans');
 
-h2, p {
+body {
+    background-color: #2B2D42;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+p {
     font-family: 'Open Sans', sans-serif;
 }
 
 h2 {
     margin-bottom: 10px;
-    font-size: 20px;
-    font-weight: 600;
-    text-decoration: none;
+    font-family: 'Marcellus SC', serif;
+    font-size: 25px;
     text-align: center;
 }
 
@@ -40,8 +48,9 @@ p:last-of-type {
 .page-box-content {
     height: 100%;
     padding: 20px;
-    border: 2px solid black;
+    border: 5px solid #EDF2F4;
     box-sizing: border-box;
+    background-color: #8D99AE;
 }
 
 .page-box-content img {
