@@ -1,4 +1,4 @@
-//TODO: load more?, style search, style footer, empty input error, return initial state on new search
+//TODO: style search, style footer, empty input error
 
 const $searchInput = $("#searchInput");
 const $searchSelect = $("#searchSelect");
@@ -9,12 +9,13 @@ const $loadMoreBtn = $("#loadMoreBtn");
 const ARTICLE_URL = "https://en.wikipedia.org/?curid=";
 const API_URL = "https://en.wikipedia.org/w/api.php?";
 const API_SETTINGS = `format=json&formatversion=2&action=query&generator=search&gsrnamespace=0&prop=pageimages|extracts|description&pithumbsize=300&pilimit=max&exintro&explaintext&exlimit=max&exchars=200`;
-const ERROR_MSG = "An error occurred. Please check your internet connection and try again.";
+const ERROR_CONNECTION_MSG = "An error occurred. Please check your internet connection and try again.";
+const ERROR_EMPTY_INPUT_MSG = "You didn't input anything!";
 
 let searchSelectState = 10;
 
 const performSearch = (searchStatus) => {
-    
+
     searchStatus === "additionalSearch" ?
         searchSelectState += 10
         :
@@ -97,7 +98,7 @@ const addPagesToList = (pages) => {
 };
 
 const handleError = () => {
-    alert(ERROR_MSG)
+    !$searchInput.val() ? alert(ERROR_EMPTY_INPUT_MSG) : alert(ERROR_CONNECTION_MSG)
 };
 
 const handleInputWhitespaces = (inputValue) => {
