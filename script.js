@@ -1,5 +1,7 @@
 //TODO: style search, style footer
 
+const $performSearchIcon = $("#performSearchIcon");
+const $searchFormContainer = $("#searchFormContainer");
 const $searchInput = $("#searchInput");
 const $searchSelect = $("#searchSelect");
 const $searchBtn = $("#searchBtn");
@@ -109,6 +111,11 @@ const setSearchSelectState = () => {
     searchSelectState = parseInt($searchSelect.val())
 };
 
+const displaySearchFormContainer = () => {
+  $searchFormContainer.removeClass("hiddenItem")
+};
+
+$performSearchIcon.on("click", displaySearchFormContainer);
 $searchBtn.on("click", () => performSearch("normalSearch"));
 $searchSelect.on("change", setSearchSelectState);
 $loadMoreBtn.on("click", () => performSearch("additionalSearch"));
