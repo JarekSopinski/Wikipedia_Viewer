@@ -64,13 +64,15 @@ const addPagesToList = (pages) => {
         if (description !== disambiguationDescription) {
 
             return $(`<li class="page-box">
-                    <a href=${ARTICLE_URL + pageid} target="_blank">
-                        <h2>${title}</h2>
-                        <img src=${thumbnailSource}>
-                    </a>
-                    <div class="page-box-text-container">
-                        <p>${description}</p>
-                        <p>${extract}</p>
+                    <div class="page-box-content">
+                        <a href=${ARTICLE_URL + pageid} target="_blank">
+                            <h2>${title}</h2>
+                            <img src=${thumbnailSource}>
+                        </a>
+                        <div class="page-box-text-container">
+                            <p>${description}</p>
+                            <p>${extract}</p>
+                        </div>
                     </div>
                   </li>`)
 

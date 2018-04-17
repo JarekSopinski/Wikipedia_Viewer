@@ -6,16 +6,55 @@
 }
 
 .page-box {
-    width: 25%;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.page-box-content {
+    height: 100%;
     padding: 20px;
     border: 2px solid black;
     box-sizing: border-box;
 }
 
-.page-box img {
+.page-box-content img {
     max-width: 200px;
     max-height: 200px;
 }
 
 .page-box-text-container {
+}
+
+@media screen and (min-width: 576px) {
+
+    .page-box {
+        width: 50%;
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+
+    .page-box {
+        width: 33%;
+    }
+
+
+}
+
+@media screen and (min-width: 1200px) {
+
+    .page-box {
+        width: 25%;
+    }
+
+}
+
+@media screen and (min-width: 1900px) {
+
+    .page-box {
+        width: 20%;
+    }
+
 }
