@@ -1,0 +1,21 @@
+#searchResultsList {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    margin: 20px;
+}
+
+.page-box {
+    width: 25%;
+    padding: 20px;
+    border: 2px solid black;
+    box-sizing: border-box;
+}
+
+.page-box img {
+    max-width: 200px;
+    max-height: 200px;
+}
+
+.page-box-text-container {
+}

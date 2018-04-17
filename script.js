@@ -43,11 +43,11 @@ const renderSearchResults = (data) => {
     console.log(pagesSorted);
 
     $searchResultsList.empty();
-    $searchResultsList.append(addArticlesToList(pagesSorted))
+    $searchResultsList.append(addPagesToList(pagesSorted))
 
 };
 
-const addArticlesToList = (pages) => {
+const addPagesToList = (pages) => {
 
     return pages.map(page => {
 
@@ -60,16 +60,18 @@ const addArticlesToList = (pages) => {
             thumbnailSource = "img/wikipedia_placeholder_480.png";
 
         const disambiguationDescription = "Disambiguation page providing links to articles with similar titles";
-        
+
         if (description !== disambiguationDescription) {
 
-            return $(`<li>
+            return $(`<li class="page-box">
                     <a href=${ARTICLE_URL + pageid} target="_blank">
                         <h2>${title}</h2>
                         <img src=${thumbnailSource}>
                     </a>
-                    <p>${description}</p>
-                    <p>${extract}</p>
+                    <div class="page-box-text-container">
+                        <p>${description}</p>
+                        <p>${extract}</p>
+                    </div>
                   </li>`)
 
         }
