@@ -72,10 +72,11 @@ const addPagesToList = (pages) => {
                             <h2>${title}</h2>
                             <img src=${thumbnailSource}>
                         </a>
-                        <div class="page-box-text-container">
-                            <p>${description}</p>
-                            <p>${extract}</p>
-                        </div>
+                        <p class="description">${description}</p>
+                        <p class="extract">${extract}</p>
+                        <a href=${ARTICLE_URL + pageid}>
+                             <button>Continue reading...</button>
+                        </a>
                     </div>
                   </li>`)
 

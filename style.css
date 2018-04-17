@@ -9,7 +9,11 @@ a {
     color: black;
 }
 
-p {
+button {
+    cursor: pointer;
+}
+
+p, span {
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -18,18 +22,6 @@ h2 {
     font-family: 'Marcellus SC', serif;
     font-size: 25px;
     text-align: center;
-}
-
-p:first-of-type {
-    margin: 10px 0 10px 0;
-    font-size: 15px;
-    font-style: italic;
-    text-align: justify;
-}
-
-p:last-of-type {
-    font-size: 13px;
-    text-align: justify;
 }
 
 #searchResultsList {
@@ -60,7 +52,17 @@ p:last-of-type {
     max-height: 200px;
 }
 
-.page-box-text-container {
+.description {
+    margin: 10px 0 10px 0;
+    font-size: 15px;
+    font-style: italic;
+    text-align: justify;
+}
+
+.extract {
+    margin-bottom: 5px;
+    font-size: 13px;
+    text-align: justify;
 }
 
 @media screen and (min-width: 576px) {
