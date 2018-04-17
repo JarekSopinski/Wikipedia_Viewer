@@ -1,4 +1,4 @@
-//TODO: load more?, color transition on hover, style search, style footer
+//TODO: load more?, style search, style footer
 
 const $searchInput = $("#searchInput");
 const $searchSelect = $("#searchSelect");
@@ -73,9 +73,9 @@ const addPagesToList = (pages) => {
                             <img src=${thumbnailSource}>
                         </a>
                         <p class="page-box-content-description">${description}</p>
-                        <p class="page-box-content-extract">${extract}</p>
+                        <p class="page-box-content-extract">${extract || ""}</p>
                         <a href=${ARTICLE_URL + pageid}>
-                             <button>Continue reading...</button>
+                             <button>Read full article on Wikipedia</button>
                         </a>
                     </div>
                   </li>`)
