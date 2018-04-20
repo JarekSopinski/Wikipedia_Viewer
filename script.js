@@ -17,7 +17,7 @@ let searchSelectState = 10;
 const performSearch = (searchStatus) => {
 
     searchStatus === "additionalSearch" ?
-        searchSelectState += 10
+        searchSelectState += 5
         :
         searchSelectState = parseInt($searchSelect.val());
 
@@ -68,10 +68,6 @@ const addPagesToList = (pages) => {
             :
             thumbnailSource = "img/wikipedia_placeholder_500_notext.png";
 
-        const disambiguationDescription = "Disambiguation page providing links to articles with similar titles";
-
-        if (description !== disambiguationDescription) {
-
             return $(`<li class="page-box">
                     <div class="page-box-content">
                         <a href=${ARTICLE_URL + pageid} target="_blank">
@@ -90,8 +86,6 @@ const addPagesToList = (pages) => {
                         
                     </div>
                   </li>`)
-
-        }
 
     })
 
